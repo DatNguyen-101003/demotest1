@@ -94,7 +94,7 @@ public class ACT_CongViec {
                 JOptionPane.showMessageDialog(guiHome, "Có lỗi xảy ra trong quá trình cập nhật thông tin công việc.", "Lỗi", JOptionPane.ERROR_MESSAGE);
             }
 }
-
+//thong bao
 private boolean checkChanges_CongViec(int maQuyen, String tenCongViec, JTable table) {
             int selectedRow = table.getSelectedRow();
             if (selectedRow == -1) {
