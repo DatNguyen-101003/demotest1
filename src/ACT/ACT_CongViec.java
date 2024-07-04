@@ -45,7 +45,7 @@ public class ACT_CongViec {
         try {
             Model_CongViec cv = new Model_CongViec();
             cv.setTenCongViec(tenCongViec);
-
+// tạo ra một đối tượng DAO_CongViec, sau đó cố gắng chèn một đối tượng CongViec vào nguồn dữ liệu, và lưu trữ trạng thái thành công
             DAO_CongViec dao = new DAO_CongViec();
             boolean isInserted = dao.insertCongViec(cv);
 
@@ -73,7 +73,7 @@ public class ACT_CongViec {
                 return;
             }
 
-            // Kiểm tra xem có sự thay đổi so với dữ liệu ban đầu hay không
+            // Kiểm tra xem có sự thay đổi so với dữ liệu ban đầu hay không.
             boolean changed_CongViec = checkChanges_CongViec(maQuyen, tenCongViec, table);
 
             if (!changed_CongViec) {
@@ -81,16 +81,16 @@ public class ACT_CongViec {
                 return;
             }
 
-            // Gọi phương thức update của DAO_CONGVIEC để cập nhật thông tin công việc
+            // Gọi phương thức update của DAO_CONGVIEC để cập nhật thông tin công việc.
             boolean updated_CongViec = DAO.DAO_CongViec.updateCongViec(maQuyen, tenCongViec);
             if (updated_CongViec) {
-                // Thông báo cập nhật thành công
+                // Thông báo cập nhật thành công.
                 JOptionPane.showMessageDialog(guiHome, "Đã cập nhật thông tin công việc thành công.", "Thông báo", JOptionPane.INFORMATION_MESSAGE);
 
-                // Sau khi cập nhật thành công, cập nhật lại bảng hiển thị
+                // Sau khi cập nhật thành công, cập nhật lại bảng hiển thị.
                 guiHome.loadbangcongviec();
             } else {
-                // Thông báo cập nhật không thành công
+                // Thông báo cập nhật không thành công.
                 JOptionPane.showMessageDialog(guiHome, "Có lỗi xảy ra trong quá trình cập nhật thông tin công việc.", "Lỗi", JOptionPane.ERROR_MESSAGE);
             }
 }
@@ -106,14 +106,14 @@ private boolean checkChanges_CongViec(int maQuyen, String tenCongViec, JTable ta
             String tenCongViecInTable = (String) table.getValueAt(selectedRow, 1);
             
 
-            // So sánh các giá trị
+            // So sánh các giá trị.
             if (maQuyen != maQuyenInTable ||
                 !tenCongViec.equals(tenCongViecInTable))
                  {
-                return true; // Có sự thay đổi
+                return true; // Có sự thay đổi.
             }
 
-            return false; // Không có sự thay đổi
+            return false; // Không có sự thay đổi.
 }
 
         
