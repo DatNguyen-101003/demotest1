@@ -26,7 +26,7 @@ public class ACT_NhaXuatBan {
             return true; // Cho phép chỉnh sửa ô
         }
     };
-
+//đặt tiêu đề cho các cột của một mô hình bảng
     Object[] title = {"Mã nhà xuất bản", "Tên nhà xuất bản", "Địa chỉ", "Số điện thoại", "Email"};
     model.setColumnIdentifiers(title);
 
